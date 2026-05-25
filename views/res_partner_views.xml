@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_partner_form_inherit_ht_beauty" model="ir.ui.view">
+        <field name="name">res.partner.form.ht.beauty</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='phone']" position="after">
+                <field name="birthday"/>
+                <field name="gender"/>
+            </xpath>
+
+            <xpath expr="//notebook" position="inside">
+                <page string="Hồ sơ điều trị">
+                    <group>
+                        <group string="Thông tin y tế">
+                            <field name="medical_history"/>
+                            <field name="allergy_note"/>
+                        </group>
+                        <group string="Đặc điểm thẩm mỹ">
+                            <field name="skin_condition"/>
+                            <field name="source_note"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

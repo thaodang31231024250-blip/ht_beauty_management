@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Đổi tên id và name cho chuẩn list (không bắt buộc nhưng nên làm) -->
+    <record id="beauty_room_list_view" model="ir.ui.view">
+        <field name="name">beauty.room.list</field>
+        <field name="model">beauty.room</field>
+        <field name="arch" type="xml">
+            <!-- 1. ĐỔI THẺ <tree> THÀNH <list> -->
+            <list decoration-success="status == 'free'" decoration-danger="status == 'maintenance'">
+                <field name="name"/>
+                <field name="code"/>
+                <field name="room_type"/>
+                <field name="status" widget="badge"/>
+                <field name="capacity"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="beauty_room_form_view" model="ir.ui.view">
+        <field name="name">beauty.room.form</field>
+        <field name="model">beauty.room</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="code"/>
+                            <field name="room_type"/>
+                        </group>
+                        <group>
+                            <field name="status"/>
+                            <field name="area"/>
+                            <field name="capacity"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Ghi chú">
+                            <field name="note"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="beauty_room_search_view" model="ir.ui.view">
+        <field name="name">beauty.room.search</field>
+        <field name="model">beauty.room</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <filter name="free" string="Trống" domain="[('status','=','free')]"/>
+                <filter name="in_use" string="Đang sử dụng" domain="[('status','=','in_use')]"/>
+                <filter name="maintenance" string="Bảo trì" domain="[('status','=','maintenance')]"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="beauty_room_action" model="ir.actions.act_window">
+        <field name="name">Phòng điều trị</field>
+        <field name="res_model">beauty.room</field>
+        <!-- 2. ĐỔI view_mode THÀNH list,form -->
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="beauty_room_search_view"/>
+    </record>
+</odoo>
