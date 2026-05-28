@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<odoo>
-    <menuitem id="ht_beauty_root_menu" name="HT Beauty" sequence="10"/>
-
-    <menuitem id="ht_beauty_config_menu" name="Cấu hình" parent="ht_beauty_root_menu" sequence="20"/>
-
-    <menuitem id="beauty_room_menu" name="Phòng điều trị" parent="ht_beauty_config_menu" action="beauty_room_action" sequence="1"/>
-</odoo>
