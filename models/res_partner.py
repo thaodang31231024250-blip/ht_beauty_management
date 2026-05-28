@@ -56,6 +56,9 @@ class ResPartner(models.Model):
     ], string='Tình trạng da')
     treatment_goal = fields.Text(string='Nhu cầu điều trị')
 
+    # skin_analysis_image = fields.Image(string='Ảnh soi da', max_width=1024, max_height=1024)
+    # skin_analysis_notes = fields.Html(string='Mô tả tình trạng da')
+
     # =========================
     # 4. THÔNG TIN ĐIỀU TRỊ
     # =========================
@@ -72,23 +75,17 @@ class ResPartner(models.Model):
     # =========================
     # 5. KIỂM TRA TRÙNG SĐT
     # =========================
-    @api.constrains('phone', 'mobile')
+    @api.constrains('phone')
     def _check_duplicate_phone(self):
         for record in self:
-            phones = list(filter(None, [record.phone, record.mobile]))
+            if record.phone:
+                duplicate = self.search([
+                    ('id', '!=', record.id),
+                    ('phone', '=', record.phone)
+                ], limit=1)
 
-            if not phones:
-                continue
-
-            duplicate = self.search([
-                ('id', '!=', record.id),
-                '|',
-                ('phone', 'in', phones),
-                ('mobile', 'in', phones)
-            ], limit=1)
-
-            if duplicate:
-                raise ValidationError(
-                    "Số điện thoại (%s) đã tồn tại trong hệ thống thuộc về khách hàng: %s. Vui lòng kiểm tra lại!"
-                    % (', '.join(phones), duplicate.name)
-                )
+                if duplicate:
+                    raise ValidationError(
+                        "Số điện thoại %s đã tồn tại trong hệ thống (Thuộc về: %s). Vui lòng kiểm tra lại!" 
+                        % (record.phone, duplicate.name)
+                    )
