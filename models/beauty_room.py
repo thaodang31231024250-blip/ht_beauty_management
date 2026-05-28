@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-print("========== ĐANG NẠP FILE BEAUTY ROOM VÀO HỆ THỐNG ==========")
+
 from odoo import models, fields
 
 class BeautyRoom(models.Model):
@@ -11,8 +11,7 @@ class BeautyRoom(models.Model):
     code = fields.Char(string='Mã phòng', required=True)
     active = fields.Boolean(string='Hoạt động', default=True)
     status = fields.Selection([
-        ('available', 'Trống'),
-        ('in_use', 'Đang sử dụng'),
+        ('available', 'Sẵn sàng'),
         ('maintenance', 'Bảo trì')
     ], string='Trạng thái', default='available', tracking=True, required=True)
     

@@ -72,20 +72,28 @@ class ResPartner(models.Model):
     # =========================
     # 5. KIỂM TRA TRÙNG SĐT
     # =========================
-    @api.constrains('phone', 'mobile')
+    @api.constrains('phone')
     def _check_duplicate_phone(self):
         for record in self:
-            phones = list(filter(None, [record.phone, record.mobile]))
+            phones = []
+            if record.phone:
+                phones.append(record.phone)
+            
+            has_mobile = 'mobile' in record._fields
+            if has_mobile and record.mobile:
+                phones.append(record.mobile)
 
             if not phones:
                 continue
 
-            duplicate = self.search([
-                ('id', '!=', record.id),
-                '|',
-                ('phone', 'in', phones),
-                ('mobile', 'in', phones)
-            ], limit=1)
+            domain = [('id', '!=', record.id)]
+            
+            if has_mobile:
+                domain += ['|', ('phone', 'in', phones), ('mobile', 'in', phones)]
+            else:
+                domain += [('phone', 'in', phones)]
+
+            duplicate = self.search(domain, limit=1)
 
             if duplicate:
                 raise ValidationError(

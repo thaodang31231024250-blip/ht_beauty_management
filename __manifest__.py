@@ -21,10 +21,10 @@
     'data': [
         'security/beauty_security.xml',
         'security/ir.model.access.csv',
-        'views/beauty_menus.xml',
         'views/beauty_room_views.xml',
         'views/hr_employee_views.xml',
         'views/res_partner_views.xml',
+        'views/beauty_menus.xml',
     ],
     'installable': True,
     'application': True,

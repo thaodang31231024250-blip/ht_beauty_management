@@ -4,7 +4,7 @@
         <field name="name">beauty.room.list</field>
         <field name="model">beauty.room</field>
         <field name="arch" type="xml">
-            <list string="Danh sách Phòng điều trị" decoration-success="status=='available'" decoration-warning="status=='in_use'" decoration-danger="status=='maintenance'">
+            <list string="Danh sách Phòng điều trị" decoration-success="status=='available'" decoration-danger="status=='maintenance'">
                 <field name="code"/>
                 <field name="name"/>
                 <field name="capacity"/>

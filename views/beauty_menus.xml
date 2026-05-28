@@ -4,7 +4,7 @@
         <field name="name">Danh sách Hồ sơ điều trị</field>
         <field name="res_model">res.partner</field>
         <field name="view_mode">kanban,list,form</field>
-        <field name="domain">[('is_company', '=', False)]</field>
+        <field name="domain">[('is_company', '=', False), ('employee', '=', False)]</field>
         <field name="context">{'default_is_company': False}</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
