@@ -34,6 +34,7 @@ class BeautyAppointment(models.Model):
     ], string='Trạng thái', default='draft', tracking=True)
 
     notes = fields.Text(string='Ghi chú')
+    service_id = fields.Many2one('product.product', string='Dịch vụ', domain="[('type', '=', 'service')]", tracking=True)
 
     @api.model_create_multi
     def create(self, vals_list):
@@ -47,6 +48,13 @@ class BeautyAppointment(models.Model):
         for record in self:
             if record.start_time >= record.end_time:
                 raise ValidationError("Thời gian kết thúc phải sau thời gian bắt đầu.")
+
+            # 0. Check Room Maintenance
+            if record.room_id and record.room_id.status == 'maintenance':
+                raise ValidationError(
+                    f"Phòng '{record.room_id.name}' đang trong trạng thái Bảo trì, không thể đặt lịch. "
+                    f"Vui lòng chọn phòng khác hoặc liên hệ quản lý."
+                )
 
             # Base domain for overlapping time
             overlap_domain = [
