@@ -15,9 +15,10 @@
         'security/ir.model.access.csv',
         'views/treatment_plan_views.xml',
         'views/treatment_session_views.xml',
+        'views/res_partner_views.xml',
     ],
     'installable': True,
-    'application': False,
+    'application': True,
     'auto_install': False,
     'license': 'LGPL-3',
 }

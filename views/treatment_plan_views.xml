@@ -99,4 +99,10 @@
         <field name="view_mode">list,form</field>
         <field name="search_view_id" ref="view_beauty_treatment_plan_search"/>
     </record>
+
+    <menuitem id="ht_beauty_core.menu_beauty_treatment_plan"
+              name="Phác đồ điều trị"
+              parent="ht_beauty_core.menu_beauty_treatment"
+              action="action_beauty_treatment_plan"
+              sequence="10"/>
 </odoo>
