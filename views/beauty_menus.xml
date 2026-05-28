@@ -24,16 +24,15 @@
             <p class="o_view_nocontent_smiling_face">
                 Tạo chương trình Khuyến mãi đầu tiên!
             </p>
-            <p>
-                Quản lý các chiến dịch giảm giá, thẻ thành viên, và voucher cho khách hàng.
-            </p>
         </field>
     </record>
 
 
     <menuitem id="menu_ht_beauty_root" 
               name="HT BEAUTY" 
-              sequence="10"/>
+              sequence="10"
+              web_icon="ht_beauty_core,static/description/icon.png"/>
+
 
     <menuitem id="menu_beauty_leads" 
               name="Quản lý Leads" 
@@ -47,35 +46,17 @@
               sequence="10"/>
               
     <menuitem id="menu_beauty_care_activities" 
-          name="Hoạt động chăm sóc" 
-          parent="menu_beauty_leads" 
-          action="crm.crm_lead_action_my_activities" 
-          sequence="20"/>
+              name="Hoạt động chăm sóc" 
+              parent="menu_beauty_leads" 
+              action="crm.crm_lead_action_my_activities" 
+              sequence="20"/>
+
 
     <menuitem id="menu_beauty_appointments_main" 
               name="Quản lý lịch hẹn" 
               parent="menu_ht_beauty_root" 
               sequence="20"/>
-              
-    <menuitem id="menu_beauty_appointment_calendar" 
-              name="Lịch hẹn" 
-              parent="menu_beauty_appointments_main" 
-              sequence="10"/>
-              
-    <menuitem id="menu_beauty_appointment_list" 
-              name="Danh sách lịch hẹn" 
-              parent="menu_beauty_appointments_main" 
-              sequence="20"/>
-              
-    <menuitem id="menu_beauty_resource_status" 
-              name="Trạng thái tài nguyên" 
-              parent="menu_beauty_appointments_main" 
-              sequence="30"/>
-              
-    <menuitem id="menu_beauty_appointment_cancelled" 
-              name="Lịch hẹn đã hủy" 
-              parent="menu_beauty_appointments_main" 
-              sequence="40"/>
+
 
     <menuitem id="menu_beauty_treatment" 
               name="Hồ sơ điều trị" 
@@ -98,6 +79,7 @@
               parent="menu_beauty_treatment" 
               sequence="20"/>
 
+
     <menuitem id="menu_beauty_reports" 
               name="Báo cáo &amp; Thống kê" 
               parent="menu_ht_beauty_root" 
@@ -118,6 +100,7 @@
               name="Báo cáo hủy lịch" 
               parent="menu_beauty_reports" 
               sequence="30"/>
+
 
     <menuitem id="menu_beauty_configuration" 
               name="Cấu hình hệ thống" 
