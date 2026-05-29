@@ -2,7 +2,7 @@
     'name': 'HT Beauty Automation',
     'version': '1.0',
     'category': 'HT Beauty',
-    'summary': 'Tự động hóa thông báo, nhắc lịch và tạo task chăm sóc khách hàng (Bản Community)',
+    'summary': 'Tự động hóa thông báo, nhắc lịch và tạo task chăm sóc khách hàng cho HT Beauty',
     'author': 'Nhóm F',
     'depends': [
         'mail', 
