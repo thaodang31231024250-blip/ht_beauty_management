@@ -34,6 +34,7 @@ class BeautyAppointment(models.Model):
     ], string='Trạng thái', default='draft', tracking=True)
 
     notes = fields.Text(string='Ghi chú')
+    category_id = fields.Many2one('product.category', string='Nhóm dịch vụ (Tag)', tracking=True)
     service_id = fields.Many2one('product.product', string='Dịch vụ', domain="[('type', '=', 'service')]", tracking=True)
 
     @api.model_create_multi

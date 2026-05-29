@@ -26,8 +26,9 @@
                     </div>
                     <group>
                         <group>
-                            <field name="customer_id"/>
-                            <field name="service_id"/>
+                            <field name="customer_id"/> 
+                            <field name="category_id" options="{'no_create': True}"/>
+                            <field name="service_id" domain="[('type', '=', 'service'), ('categ_id', '=?', category_id)]" options="{'no_create': True}"/>
                             <field name="appointment_type" widget="radio" options="{'horizontal': True}"/>
                             <field name="doctor_id" invisible="appointment_type != 'consultation'" required="appointment_type == 'consultation'"/>
                             <field name="ktv_id" invisible="appointment_type != 'treatment'" required="appointment_type == 'treatment'"/>

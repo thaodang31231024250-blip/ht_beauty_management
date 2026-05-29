@@ -2,7 +2,7 @@
     'name': 'HT Beauty - Appointment Management',
     'version': '1.0',
     'category': 'HT Beauty',
-    'author': 'Nhom F',
+    'author': 'Nhóm F',
     'license': 'LGPL-3',
     'summary': 'Phần mềm quản lý đặt lịch hẹn và điều phối tài nguyên cho HT Beauty',
     'description': ''''''
