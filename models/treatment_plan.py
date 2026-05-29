@@ -19,6 +19,7 @@ class BeautyTreatmentPlanLine(models.Model):
     price_unit = fields.Float(string='Đơn giá')
     price_subtotal = fields.Float(string='Số tiền', compute='_compute_subtotal', store=True)
 
+
     @api.depends('quantity', 'price_unit')
     def _compute_subtotal(self):
         for line in self:
@@ -49,6 +50,7 @@ class BeautyTreatmentPlan(models.Model):
     partner_id = fields.Many2one('res.partner', string='Khách hàng', required=True, tracking=True)
     doctor_id = fields.Many2one('hr.employee', string='Bác sĩ phụ trách', domain="[('role_type', '=', 'doctor')]", tracking=True)
     
+    category_id = fields.Many2one('product.category', string='Phân loại điều trị (Tag)', tracking=True)
     tag_ids = fields.Many2many('beauty.treatment.tag', string='Phân loại (Tags)')
     
     # --- ĐÃ SỬA: Thay thế Many2many bằng One2many nối sang model Line ---

@@ -2,7 +2,7 @@
     'name': 'HT Beauty Treatment',
     'version': '1.0',
     'category': 'HT Beauty',
-    'author': 'Nhom F',
+    'author': 'Nhóm F',
     'summary': 'Phần mềm quản lý phác đồ và nhật ký điều trị cho HT Beauty',
     'description': """
         Module quản lý vòng đời điều trị cho HT Beauty:
