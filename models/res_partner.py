@@ -56,8 +56,8 @@ class ResPartner(models.Model):
     ], string='Tình trạng da')
     treatment_goal = fields.Text(string='Nhu cầu điều trị')
 
-    # skin_analysis_image = fields.Image(string='Ảnh soi da', max_width=1024, max_height=1024)
-    # skin_analysis_notes = fields.Html(string='Mô tả tình trạng da')
+    skin_analysis_image = fields.Image(string='Ảnh soi da', max_width=1024, max_height=1024)
+    skin_analysis_notes = fields.Html(string='Mô tả tình trạng da')
 
     # =========================
     # 4. THÔNG TIN ĐIỀU TRỊ
