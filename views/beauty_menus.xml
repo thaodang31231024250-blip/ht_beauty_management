@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+    <record id="action_beauty_leads" model="ir.actions.act_window">
+        <field name="name">Danh sách Leads</field>
+        <field name="res_model">crm.lead</field>
+        <field name="view_mode">list,kanban,form</field>
+        <field name="domain">[('type', '=', 'lead')]</field>
+        <field name="context">{
+            'default_type': 'lead',
+            'search_default_type': 'lead',
+        }</field>
+        <field name="search_view_id" ref="crm.view_crm_case_leads_filter"/>
+    </record>
+
     <record id="action_beauty_treatment_record" model="ir.actions.act_window">
         <field name="name">Danh sách Hồ sơ điều trị</field>
         <field name="res_model">res.partner</field>
@@ -39,6 +51,12 @@
               parent="menu_ht_beauty_root" 
               sequence="10"/>
               
+    <menuitem id="menu_beauty_lead_list" 
+              name="Danh sách Leads" 
+              parent="menu_beauty_leads" 
+              action="action_beauty_leads" 
+              sequence="5"/>
+
     <menuitem id="menu_beauty_opportunities" 
               name="Cơ hội tư vấn" 
               parent="menu_beauty_leads" 
