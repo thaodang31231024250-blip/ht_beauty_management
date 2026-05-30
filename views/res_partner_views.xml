@@ -15,7 +15,7 @@
 
             <xpath expr="//notebook" position="inside">
                 
-                <page string="Hồ sơ Y &amp; Thẩm mỹ" name="beauty_medical_record">
+                <page string="Hồ sơ Thẩm mỹ" name="beauty_medical_record">
                     <group>
                         <group string="Đặc điểm Thẩm mỹ">
                             <field name="skin_type"/>

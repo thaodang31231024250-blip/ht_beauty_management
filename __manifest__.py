@@ -2,7 +2,7 @@
     'name': 'HT Beauty',
     'version': '1.0',
     'category': 'HT Beauty',
-    'author': 'Nhom F',
+    'author': 'Nhóm F',
     'license': 'LGPL-3',
     'summary': 'Phần mềm Quản lý Viện thẩm mỹ HT Beauty',
     'description': """
@@ -21,6 +21,9 @@
     'data': [
         'security/beauty_security.xml',
         'security/ir.model.access.csv',
+        'data/crm_stage_data.xml',
+        'data/beauty_service_data.xml',
+        'data/beauty_room_data.xml',
         'views/beauty_room_views.xml',
         'views/hr_employee_views.xml',
         'views/res_partner_views.xml',
