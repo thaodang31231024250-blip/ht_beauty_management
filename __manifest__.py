@@ -12,9 +12,9 @@
     ],
     'data': [
         'data/automation_cron.xml',
-        # Đã xóa dòng 'data/mail_templates.xml' ở đây
     ],
     'installable': True,
-    'application': True,
+    'application': False,
+    'auto_install': True,
     'license': 'LGPL-3',
 }
