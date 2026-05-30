@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- ============================================== -->
+    <!-- 1. TRANG CHỦ                                   -->
+    <!-- ============================================== -->
+    <template id="website.homepage" name="Homepage">
+        <t t-call="website.layout">
+            <t t-set="pageName" t-value="'homepage'"/>
+            <div id="wrap" class="oe_structure">
+
+                <section class="s_cover parallax s_parallax_is_fixed o_cc o_cc5 o_colored_level pt256 pb112"
+                         data-scroll-background-ratio="1" data-snippet="s_cover"
+                         style="background-color: rgb(248, 249, 250);">
+                    <span class="s_parallax_bg oe_img_bg o_bg_img_center"
+                          style="background-image: url('/web/image/1106-44e381c1/banner-ba%CC%81c-si%CC%83-mobile-1-scaled.jpg.webp');"/>
+                    <div class="o_we_bg_filter bg-black-50"/>
+                    <div class="s_allow_columns container">
+                        <div class="row">
+                            <div class="o_colored_level col-lg-12 pb0 pt0">
+                                <h1 style="text-align: center;" class="display-4">
+                                    <strong>Phòng khám Chuyên khoa Da liễu HT Beauty</strong>
+                                </h1>
+                                <p class="lead" style="text-align: center;">
+                                    Đánh thức vẻ đẹp tiềm ẩn - Thăng hoa nhan sắc Việt
+                                </p>
+                                <p style="text-align: center;">
+                                    <a class="mb-2 btn btn-secondary" href="/dich-vu">Khám phá dịch vụ</a>
+                                    <a href="/lien-he" class="mb-2 btn btn-outline-secondary">Tư vấn miễn phí</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="s_text_image pt80 pb80 o_colored_level"
+                         style="background-color: rgb(248, 249, 250);">
+                    <div class="container">
+                        <div class="row align-items-end">
+                            <div class="pt16 pb16 col-lg-5">
+                                <h2 class="h3-fs">Trải Nghiệm Làm Đẹp <strong>Chuẩn Y Khoa</strong></h2>
+                                <p>Mỗi làn da đều kể một câu chuyện riêng. Chúng tôi tự hào mang đến các giải pháp
+                                    chăm sóc và điều trị chuyên sâu, được thiết kế riêng biệt cho từng tình trạng
+                                    da của bạn.</p>
+                                <p><a href="/dich-vu" class="btn btn-fill-secondary">Khám Phá Dịch Vụ</a></p>
+                            </div>
+                            <div class="pt16 pb16 offset-lg-1 col-lg-6">
+                                <img src="/web/image/1069-ec2733dc/anh_ve_chung_toi.webp"
+                                     alt="Về chúng tôi"
+                                     class="img img-fluid mx-auto rounded"
+                                     loading="lazy"/>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="pt72 pb80 o_colored_level"
+                         style="background-color: rgb(248, 249, 250);">
+                    <div class="container">
+                        <h2><strong>Những dịch vụ thẩm mỹ và chăm sóc sắc đẹp hàng đầu</strong></h2>
+                        <p class="lead">Nổi bật với các liệu trình điều trị
+                            <b>Nám – Mụn – Thâm – Viêm nang lông</b>, cùng các giải pháp trẻ hóa
+                            và làm sáng da toàn diện.
+                        </p>
+                        <div class="row mt-4">
+                            <div class="col-6 col-lg-3">
+                                <p class="h1-fs">01</p>
+                                <img src="/web/image/1089-75805b41/Anh-chup-Man-hinh-2026-04-07-luc-10.45.55-600x600.webp"
+                                     alt="Nâng cơ - Trẻ hóa da" class="img img-fluid rounded" loading="lazy"/>
+                                <p class="mt-2">Nâng cơ - Trẻ hóa da</p>
+                            </div>
+                            <div class="col-6 col-lg-3">
+                                <p class="h1-fs">02</p>
+                                <img src="/web/image/1091-228277a9/Anh-chup-Man-hinh-2026-04-07-luc-10.47.58-300x300.webp"
+                                     alt="Chăm sóc - Phục hồi da" class="img img-fluid rounded" loading="lazy"/>
+                                <p class="mt-2">Chăm sóc - Phục hồi da</p>
+                            </div>
+                            <div class="col-6 col-lg-3">
+                                <p class="h1-fs">03</p>
+                                <img src="/web/image/1092-11228f60/Anh-chup-Man-hinh-2026-04-07-luc-10.49.35-300x300.webp"
+                                     alt="Điều trị da" class="img img-fluid rounded" loading="lazy"/>
+                                <p class="mt-2">Điều trị da</p>
+                            </div>
+                            <div class="col-6 col-lg-3">
+                                <p class="h1-fs">04</p>
+                                <img src="/web/image/1090-9f11332e/Anh-chup-Man-hinh-2026-04-07-luc-10.42.41-300x300.webp"
+                                     alt="Triệt lông vĩnh viễn" class="img img-fluid rounded" loading="lazy"/>
+                                <p class="mt-2">Triệt lông vĩnh viễn</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="s_numbers o_cc o_colored_level o_cc1 bg-white pt48 pb40">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <h2 class="mb-3 h4-fs">Niềm Tự Hào Của Chúng Tôi</h2>
+                                <p class="lead">Sự hài lòng và gắn bó của khách hàng chính là thước đo thành công.</p>
+                            </div>
+                            <div class="col-lg-4 text-center">
+                                <span class="display-1-fs" style="color: rgb(18, 115, 119);">10.000+</span>
+                                <br/><span class="h5-fs">Khách hàng hài lòng</span>
+                            </div>
+                            <div class="col-lg-3 text-center">
+                                <span class="display-1-fs" style="color: rgb(18, 115, 119);">100%</span>
+                                <br/><span class="h5-fs">Sản phẩm chính hãng</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </t>
+    </template>
+
+    <!-- ============================================== -->
+    <!-- 2. TRANG DỊCH VỤ                               -->
+    <!-- ============================================== -->
+    <template id="services_template" name="HT Beauty - Dịch Vụ">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="oe_structure"/>
+                <section class="pt48 pb64">
+                    <div class="container">
+                        <t t-foreach="categories" t-as="cat">
+                            <div class="mb-5">
+                                <h3 class="border-bottom pb-2 mb-4"><t t-esc="cat.name"/></h3>
+                                <div class="row">
+                                    <t t-foreach="services.filtered(lambda s: s.categ_id.id == cat.id)" t-as="srv">
+                                        <div class="col-lg-4 col-md-6 mb-4">
+                                            <div class="card h-100 shadow-sm border-0">
+                                                <t t-if="srv.image_512">
+                                                    <span t-field="srv.image_512"
+                                                          t-options="{'widget': 'image', 'class': 'card-img-top', 'style': 'height: 250px; object-fit: cover;'}"/>
+                                                </t>
+                                                <t t-else="">
+                                                    <div class="d-flex align-items-center justify-content-center bg-light"
+                                                         style="height: 250px;">
+                                                        <img src="/web/image/1091-228277a9/Anh-chup-Man-hinh-2026-04-07-luc-10.47.58-300x300.webp"
+                                                             alt="" class="img img-fluid"/>
+                                                    </div>
+                                                </t>
+                                                <div class="card-body d-flex flex-column text-center">
+                                                    <h5 class="card-title font-weight-bold mb-3">
+                                                        <t t-esc="srv.name"/>
+                                                    </h5>
+                                                    <div class="mt-auto">
+                                                        <a t-attf-href="/lien-he?service_id={{ srv.id }}"
+                                                           class="btn btn-outline-primary w-100 rounded-pill">
+                                                            Đăng Ký Tư Vấn
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </t>
+                                </div>
+                            </div>
+                        </t>
+                    </div>
+                </section>
+                <div class="oe_structure"/>
+            </div>
+        </t>
+    </template>
+
+    <!-- ============================================== -->
+    <!-- 3. TRANG LIÊN HỆ                               -->
+    <!-- ============================================== -->
+    <template id="contact_us_template" name="HT Beauty - Liên Hệ">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="oe_structure"/>
+                <section class="pt48 pb64">
+                    <div class="container">
+                        <div class="row">
+
+                            <!-- Cột Trái -->
+                            <div class="col-lg-5 mb-5 pe-lg-5">
+                                <img src="/web/image/1094-01e33200/HT_logo.webp"
+                                     alt="HT Beauty Logo"
+                                     class="img img-fluid mb-3"/>
+                                <h3 class="font-weight-bold mb-4">
+                                    CÔNG TY TNHH TM DV TRƯƠNG HOÀNG THI
+                                </h3>
+                                <p class="lead text-muted mb-4">
+                                    Viện Thẩm Mỹ HT - Nơi đánh thức và thăng hoa nhan sắc.
+                                </p>
+                                <ul class="list-unstyled" style="line-height: 2.5;">
+                                    <li>
+                                        <i class="fa fa-map-marker text-primary me-3"/>
+                                        <b>Địa chỉ:</b> 88 Đường 3/2, P12, Q.10, TP.HCM
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-phone text-primary me-3"/>
+                                        <b>Hotline:</b> 0932 94 78 79 - 0708 94 78 79
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-clock-o text-primary me-3"/>
+                                        <b>Thời gian:</b> 08:00 - 20:00 (Thứ 2 - Chủ nhật)
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- Cột Phải (Form) -->
+                            <div class="col-lg-7">
+                                <div class="card shadow-lg border-0 rounded-3">
+                                    <div class="card-body p-4 p-md-5">
+                                        <h4 class="mb-4 text-center font-weight-bold">
+                                            Để Lại Thông Tin Tư Vấn
+                                        </h4>
+
+                                        <t t-if="error_message">
+                                            <div class="alert alert-danger mb-3">
+                                                <t t-esc="error_message"/>
+                                            </div>
+                                        </t>
+
+                                        <form action="/lien-he/submit" method="post">
+                                            <input type="hidden" name="csrf_token"
+                                                   t-att-value="request.csrf_token()"/>
+
+                                            <div class="mb-3">
+                                                <label class="form-label fw-bold">Họ và tên *</label>
+                                                <input type="text" class="form-control bg-light"
+                                                       name="contact_name" required="1"/>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label class="form-label fw-bold">Số điện thoại *</label>
+                                                <input type="tel" class="form-control bg-light"
+                                                       name="phone" required="1"/>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label class="form-label fw-bold">Dịch vụ quan tâm</label>
+                                                <select class="form-select bg-light" name="service_id">
+                                                    <option value="">- Chọn dịch vụ -</option>
+                                                    <t t-foreach="services" t-as="srv">
+                                                        <option t-att-value="srv.id"
+                                                                t-att-selected="srv.id == selected_service_id">
+                                                            <t t-esc="srv.name"/>
+                                                        </option>
+                                                    </t>
+                                                </select>
+                                            </div>
+
+                                            <div class="mb-4">
+                                                <label class="form-label fw-bold">Tình trạng da</label>
+                                                <textarea class="form-control bg-light"
+                                                          name="description" rows="3"/>
+                                            </div>
+
+                                            <div class="d-grid">
+                                                <button type="submit"
+                                                        class="btn btn-primary btn-lg rounded-pill">
+                                                    TƯ VẤN MIỄN PHÍ
+                                                </button>
+                                            </div>
+                                        </form>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+                <div class="oe_structure"/>
+            </div>
+        </t>
+    </template>
+
+    <!-- ============================================== -->
+    <!-- 4. TRANG CẢM ƠN                                -->
+    <!-- ============================================== -->
+    <template id="contact_success_template" name="Gửi Thành Công">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="container pt-5 pb-5 text-center my-5">
+                    <i class="fa fa-check-circle text-success" style="font-size: 80px;"/>
+                    <h2 class="mt-4 font-weight-bold">Cảm ơn bạn đã quan tâm!</h2>
+                    <p class="lead text-muted">
+                        Chuyên viên của HT Beauty sẽ sớm liên hệ để tư vấn cho bạn.
+                    </p>
+                    <a href="/" class="btn btn-outline-primary mt-3 rounded-pill px-4">
+                        Về Trang Chủ
+                    </a>
+                </div>
+            </div>
+        </t>
+    </template>
+
+</odoo>
