@@ -30,6 +30,7 @@ class BeautyAppointment(models.Model):
         ('arrived', 'Đã đến'),
         ('in_progress', 'Đang thực hiện'),
         ('done', 'Hoàn thành'),
+        ('no_show', 'Vắng mặt'),
         ('cancelled', 'Đã hủy')
     ], string='Trạng thái', default='draft', tracking=True)
 
@@ -60,7 +61,7 @@ class BeautyAppointment(models.Model):
             # Base domain for overlapping time
             overlap_domain = [
                 ('id', '!=', record.id),
-                ('state', 'not in', ['draft', 'cancelled']),
+                ('state', 'not in', ['draft', 'cancelled', 'no_show']),
                 ('start_time', '<', record.end_time),
                 ('end_time', '>', record.start_time)
             ]
@@ -103,3 +104,6 @@ class BeautyAppointment(models.Model):
 
     def action_cancel(self):
         self.write({'state': 'cancelled'})
+
+    def action_no_show(self):
+        self.write({'state': 'no_show'})

@@ -17,7 +17,8 @@
                     <button name="action_arrive" string="Khách đến" type="object" class="oe_highlight" invisible="state != 'confirmed'"/>
                     <button name="action_in_progress" string="Thực hiện" type="object" class="oe_highlight" invisible="state != 'arrived'"/>
                     <button name="action_done" string="Hoàn thành" type="object" class="oe_highlight" invisible="state != 'in_progress'"/>
-                    <button name="action_cancel" string="Hủy" type="object" invisible="state in ('done', 'cancelled')"/>
+                    <button name="action_cancel" string="Hủy" type="object" invisible="state in ('done', 'cancelled', 'no_show')"/>
+                    <button name="action_no_show" string="Vắng mặt (No-Show)" type="object" class="btn-danger" invisible="state != 'confirmed'"/>
                     <field name="state" widget="statusbar" statusbar_visible="draft,confirmed,arrived,in_progress,done"/>
                 </header>
                 <sheet>
@@ -66,7 +67,7 @@
                 <field name="ktv_id" optional="show"/>
                 <field name="room_id"/>
                 <field name="start_time"/>
-                <field name="state" widget="badge" decoration-info="state == 'confirmed'" decoration-warning="state == 'arrived'" decoration-primary="state == 'in_progress'" decoration-success="state == 'done'"/>
+                <field name="state" widget="badge" decoration-info="state == 'confirmed'" decoration-warning="state == 'arrived'" decoration-primary="state == 'in_progress'" decoration-success="state == 'done'" decoration-danger="state == 'no_show'"/>
             </list>
         </field>
     </record>
@@ -84,6 +85,7 @@
                 
                 <separator/>
                 <filter string="Chưa hoàn thành" name="filter_not_done" domain="[('state', 'in', ['draft', 'confirmed', 'arrived', 'in_progress'])]"/>
+                <filter string="Vắng mặt (No-Show)" name="filter_no_show" domain="[('state', '=', 'no_show')]"/>
                 <separator/>
                 
                 <filter string="Khách hàng" name="group_by_customer" context="{'group_by': 'customer_id'}"/>
@@ -116,7 +118,7 @@
                                 <strong><field name="name"/></strong>
                             </div>
                             <div class="col-4 text-end">
-                                <field name="state" widget="label_selection" options="{'classes': {'draft': 'default', 'confirmed': 'info', 'arrived': 'warning', 'in_progress': 'primary', 'done': 'success', 'cancelled': 'danger'}}"/>
+                                <field name="state" widget="label_selection" options="{'classes': {'draft': 'default', 'confirmed': 'info', 'arrived': 'warning', 'in_progress': 'primary', 'done': 'success', 'no_show': 'danger', 'cancelled': 'danger'}}"/>
                             </div>
                         </div>
                         <div class="row">
