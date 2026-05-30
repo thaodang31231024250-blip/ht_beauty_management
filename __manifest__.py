@@ -1,5 +1,5 @@
 {
-    'name': 'HT Beauty',
+    'name': 'HT Beauty Core',
     'version': '1.0',
     'category': 'HT Beauty',
     'author': 'Nhóm F',
@@ -30,6 +30,6 @@
         'views/beauty_menus.xml',
     ],
     'installable': True,
-    'application': True,
-    'auto_install': False,
+    'application': False,
+    'auto_install': True,
 }
