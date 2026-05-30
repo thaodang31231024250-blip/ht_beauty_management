@@ -19,7 +19,7 @@
         'views/res_partner_views.xml',
     ],
     'installable': True,
-    'application': True,
-    'auto_install': False,
+    'application': False,
+    'auto_install': True,
     'license': 'LGPL-3',
 }
