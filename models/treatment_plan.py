@@ -65,6 +65,14 @@ class BeautyTreatmentPlan(models.Model):
 
     session_ids = fields.One2many('beauty.treatment.session', 'plan_id', string='Nhật ký các buổi')
 
+    # --- MỚI: Smart button đếm nhật ký ---
+    session_count = fields.Integer(string='Số buổi', compute='_compute_session_count')
+
+    @api.depends('session_ids')
+    def _compute_session_count(self):
+        for plan in self:
+            plan.session_count = len(plan.session_ids)
+
     @api.model_create_multi
     def create(self, vals_list):
         for vals in vals_list:
@@ -77,3 +85,27 @@ class BeautyTreatmentPlan(models.Model):
 
     def action_done(self):
         self.write({'state': 'completed'})
+
+    # --- MỚI: Mở danh sách nhật ký điều trị ---
+    def action_view_sessions(self):
+        self.ensure_one()
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'Nhật ký điều trị',
+            'res_model': 'beauty.treatment.session',
+            'view_mode': 'list,form',
+            'domain': [('plan_id', '=', self.id)],
+            'context': {'default_plan_id': self.id, 'default_partner_id': self.partner_id.id},
+        }
+
+    # --- MỚI: Mở Wizard tạo lịch hẹn hàng loạt ---
+    def action_open_bulk_appointment(self):
+        self.ensure_one()
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'Xếp lịch hàng loạt',
+            'res_model': 'beauty.bulk.appointment.wizard',
+            'view_mode': 'form',
+            'target': 'new',
+            'context': {'default_plan_id': self.id},
+        }

@@ -9,6 +9,7 @@
                 <field name="partner_id"/>
                 <field name="doctor_id"/>
                 <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                <field name="session_count" string="Số buổi"/>
                 <field name="state" widget="badge"/>
             </list>
         </field>
@@ -22,9 +23,15 @@
                 <header>
                     <button name="action_confirm" string="Bắt đầu điều trị" type="object" class="oe_highlight" invisible="state != 'draft'"/>
                     <button name="action_done" string="Hoàn thành" type="object" class="oe_highlight" invisible="state != 'active'"/>
+                    <button name="action_open_bulk_appointment" string="📅 Xếp lịch hàng loạt" type="object" class="oe_highlight" invisible="state != 'active'"/>
                     <field name="state" widget="statusbar" statusbar_visible="draft,active,completed"/>
                 </header>
                 <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button class="oe_stat_button" type="object" name="action_view_sessions" icon="fa-book">
+                            <field name="session_count" widget="statinfo" string="Nhật ký"/>
+                        </button>
+                    </div>
                     <div class="oe_title">
                         <h1>
                             <field name="name" readonly="1"/>

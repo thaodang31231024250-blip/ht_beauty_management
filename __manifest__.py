@@ -13,6 +13,7 @@
     'depends': ['ht_beauty_core', 'sale_management', 'ht_beauty_appointment'],
     'data': [
         'security/ir.model.access.csv',
+        'wizard/bulk_appointment_wizard_views.xml',
         'views/treatment_plan_views.xml',
         'views/treatment_session_views.xml',
         'views/res_partner_views.xml',
