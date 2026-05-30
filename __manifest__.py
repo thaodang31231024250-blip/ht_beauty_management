@@ -1,5 +1,5 @@
 {
-    'name': 'HT Beauty - Appointment Management',
+    'name': 'HT Beauty Appointment',
     'version': '1.0',
     'category': 'HT Beauty',
     'author': 'Nhóm F',
@@ -16,6 +16,6 @@
         'views/appointment_views.xml',
     ],
     'installable': True,
-    'application': True,
-    'auto_install': False,
+    'application': False,
+    'auto_install': True,
 }
